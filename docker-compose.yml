@@ -1,0 +1,28 @@
+version: '3'
+services:
+    database:
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: felix
+            MYSQL_DATABASE: blogroulette
+            MYSQL_USER: blogroulette
+            MYSQL_PASSWORD: blogroulettedefaultpassword
+        ports:
+          - "3306:3306"
+    backend:
+        image: blogroulette/blogroulette-backend
+        environment:
+            BLOGROULETTE_DB_URL: jdbc:database:3306/blogroulette
+            BLOGROULETTE_DB_USER: blogroulette
+            BLOGROULETTE_DB_PASSWORD: blogroulettedefaultpassword
+        ports:
+          - "8080:8080"
+        depends_on:
+          - database
+    frontend:
+        image: blogroulette/blogroulette-frontend
+        ports:
+          - "4200:4200"
+        depends_on:
+          - backend
+

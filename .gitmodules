@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/blogroulette/backend-jee.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/blogroulette/frontend-angular.git

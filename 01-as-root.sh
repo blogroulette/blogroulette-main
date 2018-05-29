@@ -43,6 +43,7 @@ sudo apt-get install -y nodejs
 npm i -g n
 n 9
 npm i -g yarn
+npm i -g @angular/cli
 npm i -g generator-ngx-rocket
 
 

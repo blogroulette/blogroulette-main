@@ -5,6 +5,7 @@ set -x
 tar -xzf wildfly12.tar.gz
 
 git pull
+git submodule update
 
 cd backend  && chmod +x Dockerbuild.sh && ./Dockerbuild.sh; cd ..
 cd frontend && chmod +x Dockerbuild.sh && ./Dockerbuild.sh; cd ..

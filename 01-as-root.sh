@@ -1,4 +1,4 @@
- 
+
 
 set -x
 
@@ -6,7 +6,7 @@ set -x
 # Install virtualbox guest utils on debian 9 (stretch) netinst VM
 echo "deb http://ftp.debian.org/debian stretch-backports main contrib" | tee /etc/apt/sources.list.d/stretch-backports.list
 apt update
-apt install -y \ 
+apt install -y \
     virtualbox-guest-utils \
     virtualbox-guest-dkms \
     virtualbox-guest-x11 \
@@ -61,6 +61,13 @@ systemctl enable docker
 systemctl start docker
 
 usermod -aG docker blogroulette
+
+
+# Add database and database user
+mysql -u root -e "CREATE DATABASE blogroulette;"
+mysql -u root -e "CREATE USER blogroulette@localhost IDENTIFIED BY 'blogroulettedefaultpassword';"
+mysql -u root -e "GRANT ALL PRIVILEGES ON blogroulette.* TO 'blogroulette'@'localhost';"
+mysql -u root -e "FLUSH PRIVILEGES;"
 
 
 # Reboot

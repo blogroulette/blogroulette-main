@@ -4,7 +4,9 @@ set -x
 
 
 git pull
-git submodule update
+git submodule update --remote
+git submodule foreach git pull origin master
+
 
 cd backend  && ./Dockerbuild.sh; cd ..
 cd frontend && yarn install && ./Dockerbuild.sh; cd ..

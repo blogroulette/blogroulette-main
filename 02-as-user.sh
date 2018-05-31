@@ -6,7 +6,7 @@ set -x
 tar -xzf wildfly12.tar.gz
 
 git pull
-git submodule update
+git submodule update --remote
 
 cd backend  && ./Dockerbuild.sh; cd ..
 cd frontend && yarn install && ./Dockerbuild.sh; cd ..

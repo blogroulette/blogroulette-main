@@ -15,7 +15,7 @@ apt install -y \
 
 # Install packaged dependencies
 apt update
-apt upgrade
+apt upgrade -y
 apt install -y \
     build-essential \
     gcc \

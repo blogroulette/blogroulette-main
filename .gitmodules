@@ -6,3 +6,6 @@
 	path = frontend
 	url = https://github.com/blogroulette/frontend-angular.git
 	branch = master
+[submodule "presentation"]
+	path = presentation
+	url = https://github.com/blogroulette/presentation
